@@ -1,0 +1,8 @@
+prefix=/home/ehecatl/autobot/catkin_ws/devel
+
+Name: autobot_bringup
+Description: Description of autobot_bringup
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ehecatl/autobot/catkin_ws/devel/lib 
+Requires: 

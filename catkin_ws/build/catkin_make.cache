@@ -1,0 +1,2 @@
+autobot_bringup:hardware/ackermann_msgs:hardware/mobile_base
+-DCATKIN_DEVEL_PREFIX=/home/ehecatl/autobot/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ehecatl/autobot/catkin_ws/install -G Unix Makefiles
