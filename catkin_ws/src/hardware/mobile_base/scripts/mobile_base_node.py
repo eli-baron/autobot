@@ -33,8 +33,8 @@ def main():
 
 	while not rospy.is_shutdown():
 		rospy.loginfo(msg.speed)
-		rc.ForwardM1(address,int(msg.speed*64))		#1/4 power forward
-		rc.BackwardM2(address,int(msg.speed*64))	#1/4 power backward
+		rc.ForwardM1(address,int(msg.speed))		#1/4 power forward = 32
+		rc.BackwardM2(address,int(msg.speed))	#1/4 power backward = 32
 		rate.sleep()
 	#rospy.spin()
 
