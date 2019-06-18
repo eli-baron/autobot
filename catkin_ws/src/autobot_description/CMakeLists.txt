@@ -10,8 +10,8 @@ project(autobot_description)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
-  sensor_msg
-  std_msg
+  sensor_msgs
+  std_msgs
   tf
   urdf
   xacro
