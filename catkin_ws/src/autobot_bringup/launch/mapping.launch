@@ -1,0 +1,25 @@
+<launch>
+    <param name="robot_description" command="cat $(find autobot_description)/urdf/basic_autobot.urdf"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find autobot_description)/rviz/basic_urdf.rviz"/>
+
+    <node name="urg_node" pkg="urg_node" type="urg_node" output="screen">
+			<param name="serial_port" type="string" value="/dev/ttyACM1" />
+			<param name="frame_id" type="string" value="laser_link" />
+	</node>
+
+    <node name="gmapping" pkg="gmapping" type="slam_gmapping" args="scan:=/scan" output="screen">
+				<param name="map_update_interval" value="1.0" />
+				<param name="maxUrange" value="5.4"/>
+				<param name="linearUpdate" value="0.3"/>
+				<param name="angularUpdate" value="0.2"/>
+				<param name="xmin" value="-50"/>
+				<param name="ymin" value="-20"/>
+				<param name="xmax" value="50"/>
+				<param name="ymax" value="20"/>
+				<param name="maxRange" value="5.5"/>
+				<param name="minimumScore" value="0.0"/>
+	</node>
+    <node name="mobile_base_node" pkg="mobile_base" type="mobile_base_node_cmd_vel.py" output="screen"/>
+    <node name="simple_gui" pkg="simple_gui" type="simple_gui_node" output="screen"/>
+</launch>
