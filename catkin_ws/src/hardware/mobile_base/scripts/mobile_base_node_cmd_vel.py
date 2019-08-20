@@ -13,9 +13,9 @@ def cmd_vel_callback(data):
 
 def main():
 	rospy.init_node('mobile_base_node', anonymous=True)
-	rospy.Subscriber("/hardware/mobile_base/cmd_vel", Twist, cmd_vel_callback)
+	rospy.Subscriber("/cmd_vel", Twist, cmd_vel_callback)		#the value in /cmd_vel gows from -0.5 to 0.5 (m/S)
 	rate=rospy.Rate(10)
-	rc=Roboclaw("/dev/ttyACM0",115200)
+	rc=Roboclaw("/dev/ttyACM1",115200)
 	rc.Open()
 	address=0x80
 	br = tf.TransformBroadcaster()

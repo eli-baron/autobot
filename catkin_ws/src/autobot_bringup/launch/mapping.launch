@@ -4,7 +4,7 @@
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find autobot_description)/rviz/basic_urdf.rviz"/>
 
     <node name="urg_node" pkg="urg_node" type="urg_node" output="screen">
-			<param name="serial_port" type="string" value="/dev/ttyACM1" />
+			<param name="serial_port" type="string" value="/dev/ttyACM0" />
 			<param name="frame_id" type="string" value="laser_link" />
 	</node>
 
@@ -21,5 +21,7 @@
 				<param name="minimumScore" value="0.0"/>
 	</node>
     <node name="mobile_base_node" pkg="mobile_base" type="mobile_base_node_cmd_vel.py" output="screen"/>
-    <node name="simple_gui" pkg="simple_gui" type="simple_gui_node" output="screen"/>
+    <!--<node name="simple_gui" pkg="simple_gui" type="simple_gui_node" output="screen"/>-->
+    <node name="joy_node" pkg="joy" type="joy_node" output="screen"/>
+    <node name="teleop_twist_joy" pkg="teleop_twist_joy" type="teleop_node" output="screen"/>
 </launch>
