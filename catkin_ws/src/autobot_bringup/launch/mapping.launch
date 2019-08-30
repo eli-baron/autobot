@@ -19,7 +19,7 @@
 				<param name="ymax" value="20"/>
 				<param name="maxRange" value="5.5"/>
 				<param name="minimumScore" value="0.0"/>
-	</node>
+	</node>	
     <node name="mobile_base_node" pkg="mobile_base" type="mobile_base_node.py" output="screen"/>
     <node name="joy_node" pkg="joy" type="joy_node" output="screen"/>
     <node name="autobot_teleop_joy" pkg="autobot_teleop" type="autobot_teleop_joy.py" output="screen"/>
